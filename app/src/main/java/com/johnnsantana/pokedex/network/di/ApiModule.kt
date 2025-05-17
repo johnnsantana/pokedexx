@@ -1,5 +1,6 @@
-package com.johnnsantana.pokedex.network
+package com.johnnsantana.pokedex.network.di
 
+import com.johnnsantana.pokedex.network.exceptions.NetworkException
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.ClientRequestException
@@ -43,7 +44,10 @@ object ApiModule {
 
             HttpResponseValidator {
                 handleResponseExceptionWithRequest { cause, request ->
-
+                    throw if (cause is ClientRequestException) {
+                        val errorMessage = cause.response.bodyAsText()
+                        NetworkException.ApiException(responseMessage = errorMessage, statusCode = cause.response.status.value)
+                    } else NetworkException.UnknownNetworkException(cause = cause)
                 }
             }
         }
