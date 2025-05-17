@@ -1,4 +1,7 @@
 package com.johnnsantana.pokedex.ui.feature.pokedex
 
-class PokedexViewModel {
+import androidx.lifecycle.ViewModel
+
+class PokedexViewModel : ViewModel(){
+
 }
