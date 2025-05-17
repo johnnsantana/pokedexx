@@ -1,7 +1,10 @@
 package com.johnnsantana.pokedex.datasource
 
-interface NetworkDataSource {
-    suspend fun getPokemonList(limit: Int, offset: Int)
+import com.johnnsantana.pokedex.data.model.PokemonInfoResponse
+import com.johnnsantana.pokedex.data.model.PokemonListResponse
 
-    suspend fun getPokemonInfo(name: String)
+interface NetworkDataSource {
+    suspend fun fetchPokemonList(limit: Int, offset: Int): PokemonListResponse
+    
+    suspend fun fetchPokemonInfo(name: String): PokemonInfoResponse
 }
