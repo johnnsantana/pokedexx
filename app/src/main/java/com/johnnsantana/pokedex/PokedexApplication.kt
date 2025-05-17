@@ -14,7 +14,6 @@ class PokedexApplication : Application() {
             androidLogger()
             androidContext(this@PokedexApplication)
             modules(appModule)
-
         }
     }
 }
