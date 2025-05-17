@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Pokedex</string>
+
+    // BottomAppBar
+    <string name="bottom_bar_title_pokedex">Pokedéx</string>
+    <string name="bottom_bar_title_region">Região</string>
+    <string name="bottom_bar_title_favorites">Favoritos</string>
+    <string name="bottom_bar_title_profile">Perfil</string>
 </resources>
