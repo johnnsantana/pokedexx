@@ -59,6 +59,8 @@ ktor-client-resources = { module = "io.ktor:ktor-client-resources", version.ref 
 ktor-client-websockets = { module = "io.ktor:ktor-client-websockets", version.ref = "ktorClientWebsockets" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorSerializationKotlinxJson" }
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+paging-paging-runtime = { module = "androidx.paging:paging-runtime", version.ref = "paging"}
+paging-paging-compose= { module = "androidx.paging:paging-compose", version.ref = "paging"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

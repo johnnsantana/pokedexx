@@ -1,4 +1,4 @@
-package com.johnnsantana.pokedex.network.exceptions
+package com.johnnsantana.pokedex.data.network.exceptions
 
 sealed class NetworkException(message: String, cause: Throwable? = null) : Exception(message, cause) {
 

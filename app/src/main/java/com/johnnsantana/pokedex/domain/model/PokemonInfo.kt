@@ -1,9 +1,9 @@
-package com.johnnsantana.pokedex.domain
+package com.johnnsantana.pokedex.domain.model
 
 data class PokemonInfo(
     val id: Int,
     val name: String,
     val generation: String?,
-    val types: List<String>,
+    val types: String,
     val imageUrl: String
 )
