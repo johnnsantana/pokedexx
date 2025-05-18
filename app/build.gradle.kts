@@ -74,6 +74,8 @@ dependencies {
     implementation (libs.ktor.client.logging)
     implementation("io.coil-kt.coil3:coil-compose:3.2.0")
     implementation("io.coil-kt.coil3:coil-network-okhttp:3.2.0")
+    implementation(libs.paging.paging.runtime)
+    implementation(libs.paging.paging.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -18,17 +18,17 @@ enum class TopLevelDestination(
         route = Routes.Pokedex::class,
     ),
     REGION(
-        titleRes = R.string.bottom_bar_title_pokedex,
+        titleRes = R.string.bottom_bar_title_region,
         iconRes = R.drawable.ic_region_not_selected,
         route = Routes.Region::class,
     ),
     FAVORITES(
-        titleRes = R.string.bottom_bar_title_pokedex,
+        titleRes = R.string.bottom_bar_title_favorites,
         iconRes = R.drawable.ic_favoriote_not_selected,
         route = Routes.Favorites::class,
     ),
     PROFILE(
-        titleRes = R.string.bottom_bar_title_pokedex,
+        titleRes = R.string.bottom_bar_title_profile,
         iconRes = R.drawable.ic_profile_not_selected,
         route = Routes.Profile::class,
     ),

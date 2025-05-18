@@ -1,4 +1,4 @@
-package com.johnnsantana.pokedex.network.exceptions
+package com.johnnsantana.pokedex.data.network.exceptions
 
 import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.statement.bodyAsText

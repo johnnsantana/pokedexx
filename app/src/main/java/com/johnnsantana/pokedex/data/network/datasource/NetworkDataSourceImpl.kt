@@ -1,4 +1,4 @@
-package com.johnnsantana.pokedex.datasource
+package com.johnnsantana.pokedex.data.network.datasource
 
 import com.johnnsantana.pokedex.data.model.PokemonInfoResponse
 import com.johnnsantana.pokedex.data.model.PokemonListResponse

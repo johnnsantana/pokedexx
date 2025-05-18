@@ -1,6 +1,6 @@
-package com.johnnsantana.pokedex.network.di
+package com.johnnsantana.pokedex.data.network.di
 
-import com.johnnsantana.pokedex.network.exceptions.NetworkException
+import com.johnnsantana.pokedex.data.network.exceptions.NetworkException
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.ClientRequestException

@@ -1,9 +1,9 @@
-package com.johnnsantana.pokedex.data.mappers
+package com.johnnsantana.pokedex.mappers
 
 import com.johnnsantana.pokedex.data.model.BasicPokemonResponse
 import com.johnnsantana.pokedex.data.model.PokemonInfoResponse
-import com.johnnsantana.pokedex.domain.Pokemon
-import com.johnnsantana.pokedex.domain.PokemonInfo
+import com.johnnsantana.pokedex.domain.model.Pokemon
+import com.johnnsantana.pokedex.domain.model.PokemonInfo
 
 fun PokemonInfoResponse.toDomain(): PokemonInfo {
     val generationName = pastAbilities.firstOrNull()?.generation?.name
@@ -12,7 +12,7 @@ fun PokemonInfoResponse.toDomain(): PokemonInfo {
         id = id,
         name = name.replaceFirstChar { it.uppercase() },
         generation = generationName,
-        types = types.map { it.type.name },
+        types = this.types.joinToString(", ") { it.type.name.replaceFirstChar { it -> it.uppercase() } },
         imageUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png"
     )
 }

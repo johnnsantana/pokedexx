@@ -1,11 +1,13 @@
-package com.johnnsantana.pokedex.repository
+package com.johnnsantana.pokedex.data.repository
 
-import com.johnnsantana.pokedex.datasource.NetworkDataSource
-import com.johnnsantana.pokedex.domain.Pokemon
-import com.johnnsantana.pokedex.domain.PokemonInfo
+import androidx.paging.PagingSource
+import com.johnnsantana.pokedex.data.network.datasource.NetworkDataSource
+import com.johnnsantana.pokedex.domain.model.Pokemon
+import com.johnnsantana.pokedex.domain.model.PokemonInfo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import com.johnnsantana.pokedex.data.mappers.toDomain
+import com.johnnsantana.pokedex.mappers.toDomain
+import com.johnnsantana.pokedex.ui.feature.pokedex.paging.PokedexPagingSource
 
 class PokedexRepositoryImpl(
     private val networkDataSource: NetworkDataSource
@@ -17,7 +19,7 @@ class PokedexRepositoryImpl(
     ): Result<List<Pokemon>> {
         return withContext(Dispatchers.IO) {
             runCatching {
-                val resultListPokemon = networkDataSource.fetchPokemonList(limit, offset)
+                val resultListPokemon = networkDataSource.fetchPokemonList(PAGE_SIZE, offset)
                 resultListPokemon.results.map { it.toDomain() }
             }
         }
@@ -32,4 +34,14 @@ class PokedexRepositoryImpl(
             }
         }
     }
+
+    override fun getPokemonPagingSource(): PagingSource<Int, Pokemon> {
+        return PokedexPagingSource(this)
+    }
+
+
+    companion object {
+        private const val PAGE_SIZE = 10
+    }
+
 }

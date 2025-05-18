@@ -7,5 +7,5 @@ import org.koin.dsl.module
 
 
 val viewModelModule = module {
-    viewModel { PokedexViewModel(get()) }
+    viewModel { PokedexViewModel(get(), get()) }
 }
